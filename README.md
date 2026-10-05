@@ -207,52 +207,11 @@ python -m humer \
   --seed 42
 ```
 
-Equivalent installed command:
-
-```bash
-humer-train \
-  --config configs/experiments/unixcoder_devign.yaml \
-  --output-dir outputs/unixcoder_devign_seed42 \
-  --seed 42
-```
-
-PrimeVul example:
-
-```bash
-CUDA_VISIBLE_DEVICES=0 \
-python -m humer \
-  --config configs/experiments/unixcoder_primevul.yaml \
-  --output-dir outputs/unixcoder_primevul_seed42 \
-  --seed 42
-```
-
 Configuration files for all six adapters and both datasets are available in
 `configs/experiments/`.
 
 HUMER refuses to overwrite an existing output directory. Choose a new
 directory for every run.
-
-## How HUMER schedules training
-
-- Difficulty: code-based negative Maintainability Index
-- Buckets: five label-stratified buckets, ordered easy to hard
-- Stage 1: three bucket-equivalent epochs on bucket 1
-- Stages 2--5: one current-bucket prelearning epoch followed by two adaptive
-  mixed-review epochs
-- History ratio: `r_s = H_s / (H_s + U_s + 1e-8)`, without clipping
-- Persistent-error ratio: `q_s = persistent_error_count / historical_count`
-- Review allocation: deterministic stage-level quotas
-- Optimizer: a new AdamW optimizer at every Stage and at consolidation
-- Scheduler: none
-- Stage checkpoint metric: validation F1
-- Consolidation: full training set, at most 20 epochs, patience 5
-- Final checkpoint: validation-F1-best consolidation checkpoint only
-- Classification threshold: 0.5
-- Test evaluation: once, after final checkpoint selection
-
-The Stage 5 checkpoint initializes consolidation but is not eligible for final
-model selection. Every final-model candidate has therefore completed at least
-one full-data consolidation update.
 
 ## Output files
 
