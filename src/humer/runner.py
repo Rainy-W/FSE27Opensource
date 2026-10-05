@@ -1,8 +1,8 @@
-"""Final HUMER training pipeline.
+"""HUMER training pipeline.
 
-This module implements the released E3-C configuration only: code-based
-curriculum construction, adaptive historical review with original persistent
-errors, and mandatory full-data knowledge consolidation.
+This module implements code-based curriculum construction, adaptive historical
+review with original persistent errors, and mandatory full-data knowledge
+consolidation.
 """
 
 from __future__ import annotations
