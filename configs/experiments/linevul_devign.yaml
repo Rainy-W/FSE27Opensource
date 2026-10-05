@@ -1,0 +1,4 @@
+data_dir: data/Devign
+output_dir: outputs/linevul_devign_seed42
+model: linevul
+seed: 42

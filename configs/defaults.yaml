@@ -1,0 +1,16 @@
+# Reference values used by the paper experiments. Experiment files may omit
+# these fields because the same values are built into HumerConfig defaults.
+seed: 42
+batch_size: 32
+eval_batch_size: 32
+max_length: 512
+learning_rate: 2.0e-5
+weight_decay: 0.01
+num_buckets: 5
+consolidation_max_epochs: 20
+consolidation_patience: 5
+decision_threshold: 0.5
+strict_determinism: true
+hf_cache_dir: .cache/huggingface
+difficulty_cache_dir: outputs/difficulty_cache
+local_files_only: false

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humer-vulnerability-detection"
+version = "1.0.0"
+description = "HUMER curriculum learning and adaptive review for source-code vulnerability detection"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "huggingface-hub>=0.26,<1",
+  "numpy>=1.26,<3",
+  "PyYAML>=6,<7",
+  "scikit-learn>=1.5,<2",
+  "sentencepiece>=0.2,<1",
+  "torch>=2.5,<2.6",
+  "transformers==4.46.3",
+]
+
+[project.optional-dependencies]
+epvd = [
+  "networkx>=2.8,<4",
+  "scipy>=1.8,<2",
+  "tree-sitter==0.20.0",
+]
+dev = [
+  "ruff>=0.8,<1",
+]
+
+[project.scripts]
+humer-train = "humer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"

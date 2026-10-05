@@ -1,0 +1,6 @@
+data_dir: data/Devign
+output_dir: outputs/epvd_devign_seed42
+model: epvd
+seed: 42
+epvd_eval_batch_size: 8
+epvd_micro_batch_size: 4

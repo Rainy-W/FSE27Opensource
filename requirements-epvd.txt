@@ -1,0 +1,4 @@
+-r requirements.txt
+networkx>=2.8,<4
+scipy>=1.8,<2
+tree-sitter==0.20.0

@@ -1,0 +1,4 @@
+data_dir: data/PrimeVul
+output_dir: outputs/codet5_primevul_seed42
+model: codet5
+seed: 42

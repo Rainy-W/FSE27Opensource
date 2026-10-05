@@ -1,0 +1,4 @@
+data_dir: data/PrimeVul
+output_dir: outputs/codebert_primevul_seed42
+model: codebert
+seed: 42

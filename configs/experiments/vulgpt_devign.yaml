@@ -1,0 +1,4 @@
+data_dir: data/Devign
+output_dir: outputs/vulgpt_devign_seed42
+model: vulgpt
+seed: 42

@@ -1,0 +1,4 @@
+data_dir: data/PrimeVul
+output_dir: outputs/unixcoder_primevul_seed42
+model: unixcoder
+seed: 42
